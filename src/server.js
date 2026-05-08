@@ -6,8 +6,8 @@ connectDB();
 
 const PORT = process.env.PORT || 5000;
 
-// Only listen locally, Vercel handles the port in production
-if (process.env.NODE_ENV !== 'production') {
+// Only listen locally, Vercel handles the execution in production
+if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
   });
